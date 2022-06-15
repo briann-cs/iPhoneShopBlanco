@@ -1,14 +1,20 @@
-import ItemCount from "./ItemCount";
+import { useEffect, useState } from "react";
+import ItemList from "./ItemList";
+import products from "./products";
+import promesa from "./promesa";
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
+    const [items, setItems] = useState([])
 
-    const onAdd = () => {  }
+    useEffect(() =>{
+        promesa(2000, products)
+        .then(resultado => setItems(resultado))
+    },[items])
 
     return(
-        <div>
-            <h3>{greeting}</h3>
-            <ItemCount stock={5} onAdd={onAdd} initial={1} />
-        </div>
+      <div>
+        <ItemList products={items}/>
+      </div>
     )
 }
 
