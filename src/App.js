@@ -3,10 +3,17 @@ import ItemListContainer from './components/ItemListContainer';
 
 const App = () => {
     return (
-       <div>
-           <NavBar />
-           <ItemListContainer/>
-       </div>
+        <> 
+        <NavBar />
+        <br/>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                <ItemListContainer/>
+                </div>
+            </div>
+        </div>
+        </>
     );
 }
 

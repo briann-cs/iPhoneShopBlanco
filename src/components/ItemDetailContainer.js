@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import ItemList from "./ItemList";
+import ItemDetail from "./ItemDetail";
 import products from "./products";
 import promesa from "./promesa";
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
     const [items, setItems] = useState([])
 
     useEffect(() =>{
@@ -12,8 +12,8 @@ const ItemListContainer = () => {
     },[items])
 
     return(
-        <ItemList products={items}/>
+        <ItemDetail products={items}/>
     )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;
